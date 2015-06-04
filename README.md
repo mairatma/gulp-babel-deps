@@ -18,4 +18,4 @@ gulp.task('build', function() {
 ## API
 
 ### options
-The options that gulp-babel-deps receives are the same ones accepted by [babel](https://npmjs.com/package/babel).
+The options that gulp-babel-deps receives are the same ones accepted by [babel-deps](https://npmjs.com/package/babel-deps).

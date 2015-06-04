@@ -18,7 +18,7 @@ module.exports = {
   },
 
   testCompileDependencyWithSourceMaps: function(test) {
-    buildDeps([loadStreamFile('main.js')], {sourceMaps: true}, function(files) {
+    buildDeps([loadStreamFile('main.js')], {babel: {sourceMaps: true}}, function(files) {
       assert.strictEqual(3, files.length);
       assert.ok(files[0].sourceMap);
       assert.ok(files[1].sourceMap);
