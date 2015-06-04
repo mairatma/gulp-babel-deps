@@ -23,10 +23,12 @@ module.exports = function(options) {
       for (var i = 0; i < results.length; i++) {
         var file = new gutil.File({
           base: basePath,
-          contents: results[i].babel.code,
+          contents: new Buffer(results[i].babel.code),
           path: results[i].path
         });
-        sourceMap(file, results[i].babel.map);
+        if (results[i].babel.map) {
+          sourceMap(file, results[i].babel.map);
+        }
         this.push(file); // jshint ignore:line
       }
       callback();
