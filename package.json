@@ -28,7 +28,10 @@
     "gulp"
   ],
   "dependencies": {
-    "babel-deps": "^0.1.2"
+    "babel-deps": "^0.1.2",
+    "gulp-util": "^3.0.5",
+    "through2": "^0.6.5",
+    "vinyl-sourcemaps-apply": "^0.1.4"
   },
   "devDependencies": {
     "istanbul": "^0.3.14",
