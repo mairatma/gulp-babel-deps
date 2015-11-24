@@ -27,6 +27,23 @@ module.exports = {
     });
   },
 
+  testBabelMetadata: function(test) {
+    buildDeps([loadStreamFile('main.js')], null, function(files) {
+      assert.ok(files[0].babel);
+      assert.strictEqual(2, files[0].babel.modules.imports.length);
+      assert.ok(files[0].babel.usedHelpers);
+
+      assert.ok(files[1].babel);
+      assert.ok(files[1].babel.usedHelpers);
+      assert.strictEqual(0, files[1].babel.modules.imports.length);
+
+      assert.ok(files[2].babel);
+      assert.ok(files[2].babel.usedHelpers);
+      assert.strictEqual(0, files[2].babel.modules.imports.length);
+      test.done();
+    });
+  },
+
   testErrorInvalidJs: function(test) {
     buildDeps(
       [loadStreamFile('invalid.js')],

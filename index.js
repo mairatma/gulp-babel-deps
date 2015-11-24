@@ -26,6 +26,7 @@ module.exports = function(options) {
           contents: new Buffer(results[i].babel.code),
           path: results[i].path
         });
+        file.babel = results[i].babel.metadata;
         if (results[i].babel.map) {
           sourceMap(file, results[i].babel.map);
         }
