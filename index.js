@@ -42,3 +42,5 @@ module.exports = function(options) {
 
   return through.obj(receiveFile, compile);
 };
+
+module.exports.clearCache = babelDeps.clearCache;
